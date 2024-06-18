@@ -1,0 +1,21 @@
+# Enable specific rules
+lint.select = ["E", "F", "W", "C", "N", "D"]
+
+# Set maximum line length (correct option is `line-length`)
+line-length = 100
+
+# Other configurations
+# This section can include additional configurations as needed
+
+exclude = [
+    ".git",
+    "__pycache__",
+    "venv",
+    "build",
+    "dist",
+    "migrations",
+    "__init__",
+]
+
+[lint.per-file-ignores]
+"**/__init__.py" = ["ALL"]

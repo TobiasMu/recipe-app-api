@@ -1,22 +1,23 @@
-"""
-Django admin cusomization.
-"""
+"""Django admin cusomization."""
+
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext_lazy as _
 
 from core import models
 
+
 class UserAdmin(BaseUserAdmin):
     """Define the admin pages for users."""
+
     ordering = ['id']
     list_display = ['email', 'name']
     fieldsets = (
-        (None, {'fields':('email', 'password')}),
+        (None, {'fields': ('email', 'password')}),
         (
             _('Permissions'),
             {
-                'fields':(
+                'fields': (
                     'is_active',
                     'is_staff',
                     'is_superuser',
@@ -29,7 +30,7 @@ class UserAdmin(BaseUserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields':(
+            'fields': (
                 'email',
                 'password1',
                 'password2',
